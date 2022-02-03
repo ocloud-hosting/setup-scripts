@@ -1,4 +1,4 @@
-source (dirname $0)/snippets/sudo-check.sh
+source $(dirname $0)/snippets/sudo-check.sh
 if [ -x "$(command -v docker)" ]; then
     echo 'Docker is already installed.'
 else

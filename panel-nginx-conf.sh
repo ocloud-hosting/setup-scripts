@@ -2,11 +2,11 @@ cleanup_and_copy() {
     rm /etc/nginx/sites-enabled/default
 
     if [$1 -e "ssl"]; then
-        cp (dirname $0)/assets/nginx.ssl.conf /etc/nginx/sites-available/pterodactyl.conf
+        cp $(dirname $0)/assets/nginx.ssl.conf /etc/nginx/sites-available/pterodactyl.conf
     fi
 
     if [$1 -e "nossl"]; then
-        cp (dirname $0)/assets/nginx.nossl.conf /etc/nginx/sites-available/pterodactyl.conf
+        cp $(dirname $0)/assets/nginx.nossl.conf /etc/nginx/sites-available/pterodactyl.conf
     fi
 
     sed -i 's/{{domain}}/'"$domain"'/g' /etc/nginx/sites-available/pterodactyl.conf
